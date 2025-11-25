@@ -211,8 +211,8 @@ function loadData() {
         .forEach((r) => {
           const row = `
             
-          <div class="mt-4 space-y-4">
-    <div class="bg-white p-5 rounded-2xl shadow">
+          <div class="mt-4 space-y-2">
+    <div class="bg-white px-5 py-3 rounded-2xl shadow">
       <div class="flex justify-between items-center">
         <div>
           <p class="font-semibold">   ${formatDate(r.Date)} → ${formatTime(
