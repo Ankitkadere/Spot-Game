@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relax 30 Product Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-yellow-300 min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="flex justify-between items-center px-5 pt-6">
+        <button class="text-white text-2xl font-bold">←</button>
+
+        <h1 class="text-white text-xl font-bold">xefag</h1>
+
+        <button class="relative">
+            <i class="fa fa-shopping-cart text-white text-xl"></i>
+            <span
+                class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                1
+            </span>
+        </button>
+    </header>
+
+    <!-- CATEGORY SWITCH -->
+    <div class="flex justify-center gap-6 mt-6">
+        <button class="font-semibold text-white border-b-2 border-white">Relax</button>
+        <button class="font-semibold text-white opacity-70">Sleep</button>
+    </div>
+
+    <!-- PRODUCT IMAGE -->
+    <div class="flex justify-center mt-10">
+        <img src="https://i.ibb.co/MN09kfW/yellow-bottle.png" alt="Relax Bottle" class="w-52 drop-shadow-xl" />
+    </div>
+
+    <!-- COUNT OPTIONS -->
+    <div class="flex justify-center gap-4 mt-6">
+        <button
+            class="dose-btn active bg-gray-900 text-white w-12 h-12 flex items-center justify-center rounded-full">30</button>
+        <button
+            class="dose-btn bg-yellow-500 text-white w-12 h-12 flex items-center justify-center rounded-full">60</button>
+        <button
+            class="dose-btn bg-yellow-400 text-white w-12 h-12 flex items-center justify-center rounded-full">90</button>
+    </div>
+
+    <!-- PRODUCT CARD -->
+    <div class="bg-white rounded-t-3xl px-6 py-8 mt-10">
+        <h2 class="text-2xl font-bold">Relax 30 Dissolvable Wafers</h2>
+        <p class="text-gray-600 mt-1">250 mg</p>
+
+        <div class="flex items-center justify-between mt-6">
+            <p class="text-3xl font-bold">$25.50</p>
+
+            <!-- Quantity -->
+            <div class="flex items-center space-x-4">
+                <button onclick="changeQty(-1)"
+                    class="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center text-xl font-semibold">−</button>
+
+                <span id="qty" class="text-xl font-semibold">2</span>
+
+                <button onclick="changeQty(1)"
+                    class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center text-xl font-semibold">+</button>
+            </div>
+        </div>
+
+        <button
+            class="bg-yellow-400 w-full py-4 rounded-full text-lg font-bold mt-8 shadow-md hover:bg-yellow-500 transition">
+            Buy Now
+        </button>
+    </div>
+
+    <script>
+        // Dose selection
+        const doseButtons = document.querySelectorAll(".dose-btn");
+        doseButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                doseButtons.forEach(b => b.classList.remove("bg-gray-900", "text-white"));
+                btn.classList.add("bg-gray-900", "text-white");
+            });
+        });
+
+        // Quantity counter
+        let qty = 2;
+        function changeQty(val) {
+            qty += val;
+            if (qty < 1) qty = 1;
+            document.getElementById("qty").innerText = qty;
+        }
+    </script>
+</body>
+
+</html>
