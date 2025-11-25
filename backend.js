@@ -37,7 +37,7 @@ alpha.addEventListener("click", () => {
   document.getElementById("alphachild").style.backgroundColor = "white";
   document.getElementById("beetachild").style.backgroundColor = "";
   document.querySelector("#dataTable").innerHTML = `
-     <div id="preLoader" class="mt-4 space-y-4">
+     <div id="preLoader" class="mt-2 space-y-3">
         <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
           <div class="flex justify-between items-center">
             <div>
