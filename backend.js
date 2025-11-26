@@ -211,14 +211,14 @@ function loadData() {
         .forEach((r) => {
           const row = `
             
-          <div class="mt-4 space-y-2">
-    <div class="bg-white px-5 py-3 rounded-2xl shadow">
+          <div class="mt-4 space-y-4">
+    <div class="bg-white px-5 py-4 rounded-2xl shadow">
       <div class="flex justify-between items-center">
         <div>
-          <p class="font-semibold">   ${formatDate(r.Date)} → ${formatTime(
+        <b class="text-3x1 text-black text-extrabold">${r.Applicant}</b>
+          <p class="text-gray-500">   ${formatDate(r.Date)} → ${formatTime(
             r.Time
           )} </p>
-          <p class="text-sm text-gray-500">${r.Category}</p>
         </div>
         <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-lg font-bold">${
           r.Marks
