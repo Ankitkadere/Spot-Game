@@ -2,101 +2,227 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DPBoss Style Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DPBoss Style Result Page</title>
 
-  <!-- Tailwind -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-orange-100 text-center">
 
-  <!-- Header -->
-  <div class="bg-orange-200 py-4 border-b border-orange-300">
-    <h1 class="text-3xl font-bold text-pink-600 tracking-wide">DPBOSS.BOSTON</h1>
-
-    <p class="text-xs mt-1">!! Welcome to dpboss Inamdar !! Satta Fast Result</p>
+  <!-- HEADER -->
+  <div class="bg-orange-200 py-4 border-b border-orange-300 shadow">
+    <h1 class="text-3xl font-bold text-pink-600">Spot Game</h1>
+    <p class="text-xs text-gray-700 mt-1">!! Welcome to game International !! Satta Fast Result</p>
   </div>
 
-  <!-- Banner -->
-  <div class="mt-4">
-    <img src="https://via.placeholder.com/180x90?text=Image" 
-         class="mx-auto rounded shadow">
+ 
+
+  <!-- NOTICE -->
+  <div class="bg-orange-300 mt-4 mx-4 p-3 rounded-lg text-[12px] leading-4 border border-orange-400 shadow">
+    dpboss Service is free.  
+    We provide fast satta results for all markets.  
+    Check your daily lucky numbers and live updates here.
   </div>
 
-   
-  <!-- Lucky Number -->
-  <div class="bg-pink-500 text-white mt-4 py-2 text-lg font-bold">
+  <!-- LUCKY NUMBER -->
+  <div class="bg-pink-600 text-white py-2 mt-4 text-lg font-bold">
     Today Lucky Number
   </div>
 
-  <div class="mx-3 bg-white p-3 rounded-lg border border-gray-300 mt-2 shadow">
-
-    <div class="flex justify-between text-left">
-      <div>
-        <p class="font-bold">Golden Ank :</p>
-        <p class="text-pink-600 font-semibold text-xl">2-7-4-9</p>
-      </div>
-
-      <div>
-        <p class="font-bold">Final Ank :</p>
-        <p class="text-pink-600 font-semibold text-xl">8</p>
-      </div>
+ <div class="mx-4 mt-3 bg-white p-5 rounded-2xl shadow-lg border border-gray-200">
+  <div class="flex items-center justify-between">
+    
+    <div class="text-left">
+      <p class="text-base font-semibold text-gray-900">Golden Ank</p>
+      <p class="text-2xl font-extrabold text-pink-600">2-7-4-9</p>
     </div>
+
+    <div class="text-right">
+      <p class="text-base font-semibold text-gray-900">Final Ank</p>
+      <p class="text-2xl font-extrabold text-pink-600">8</p>
+    </div>
+
   </div>
+</div>
 
-  <!-- Red Warning Box -->
-  <div class="bg-red-600 text-white px-4 py-4 mx-3 mt-4 rounded-lg text-[13px] leading-5 shadow-lg">
-    कल्याण मट्का, सट्टा मट्का, मट्का चार्ट, राजधा*** मट्का, बॉम्बे मट्का, सट्टा किंग,
-    फास्ट मट्का रिजल्ट यहाँ देखें। <br><br>
-    ऑल इंडिआ मटका लाइव रिजल्ट, फुली फास्ट अपडेट हर सेकंड यहाँ उपलब्ध।
+
+  <!-- WARNING BOX -->
+  <div class="bg-red-600 text-white px-4 py-4 mx-4 mt-4 rounded-lg text-[13px] leading-5 shadow-lg">
+    कल्याण मटका, मटका चार्ट, बॉम्बे मटका, सट्टा किंग & लाइव अपडेट यहाँ उपलब्ध।  
+    फास्ट रिजल्ट देखने के लिए हमारा पेज रोज़ चेक करें।
   </div>
-
-  <!-- WhatsApp Button -->
-  <button class="bg-green-500 text-white py-2 px-4 mt-3 rounded-full shadow text-sm">
-    Join On WhatsApp
-  </button>
-
-  <!-- LIVE RESULT -->
-  <div class="bg-pink-600 text-white py-2 mt-4 font-bold text-lg">
+ 
+  <!-- LIVE RESULT HEADER -->
+  <div class="bg-pink-600 text-white py-2 mt-5 text-lg font-bold shadow">
     LIVE RESULT
   </div>
 
-  <div class="mt-4">
-    <p class="font-semibold text-gray-700">Sabse Tezz Live Result Yahi Milega</p>
+  <!-- FASTEST UPDATE TEXT -->
+  <p class="mt-3 text-gray-800 text-lg font-extrabold">सबसे तेज़ लाइव रिजल्ट यहीं मिलेगा</p>
 
-    <div class="mt-4">
-      <h2 class="font-bold text-xl">SRIDEVI</h2>
-      <p class="text-pink-600 font-extrabold text-2xl">339-5</p>
-    </div>
+  <!-- RESULT SECTION -->
+  <div class="mt-5 space-y-6 pb-10">
 
-    <div class="mt-6">
-      <h2 class="font-bold text-xl">KALYAN MORNING</h2>
-      <p class="text-pink-600 font-extrabold text-2xl">156-29-270</p>
-    </div>
+    <!-- Function to add blocks faster -->
+    <!-- Each result block = title + number -->
+    <script>
+      const results = [
+        ["SRIDEVI", "339-5"],
+        ["KALYAN MORNING", "156-29-270"],
+        ["MAIN BAZAR MORNING", "126-96-150"],
+        ["SUNDAY BAZAR", "Loading..."],
+        ["MADHURI", "189-8"],
+        ["PADMAVATHI", "336-2"],
+        ["MADHURI", "470-5"],
+        ["PADMAVATHI", "225-9"],
+        ["MADHUR MORNING", "358-0"],
+        ["MAHARANI", "246-3"],
+        ["RADHA-RANI MORNING", "Loading..."],
+        ["SUPER MILAN DAY", "889-112"],
+        ["JAY SHREE DAY", "660-233"],
+        ["DAY BOMBAY", "233-7"],
+        ["JANTA DAY", "360-112"],
+        ["KALYAN SRIDEVI", "659-3"],
+        ["KAMAL MORNING", "780-9"],
+        ["MEENA MORNING", "104-1"],
+        ["RAKHI MORNING", "495-245"],
+        ["SHAGUN", "775-4"],
+        ["SHRI DAY", "669-127"],
+        ["SRI LAXSHMI", "484-470"],
+        ["TIME BAZAR MORNING", "826-9"],
+        ["TIME MORNING", "459-355"],
+        ["MORNING", "127-9"]
+      ];
+    </script>
 
-    <div class="mt-6">
-      <h2 class="font-bold text-xl">MAIN BAZAR MORNING</h2>
-      <p class="text-pink-600 font-extrabold text-2xl">126-96-150</p>
-    </div>
+    <!-- Dynamic result renderer -->
+    <div id="resultsContainer"></div>
 
-    <div class="mt-6">
-      <h2 class="font-bold text-xl">SUNDAY BAZAR</h2>
-      <p class="text-gray-600 font-semibold">Loading...</p>
-    </div>
+    <script>
+      const container = document.getElementById("resultsContainer");
 
-    <div class="mt-6">
-      <h2 class="font-bold text-xl">MADHURI</h2>
-      <p class="text-pink-600 font-extrabold text-2xl">189-8</p>
-    </div>
+      results.forEach(item => {
+        container.innerHTML += `
+          <div class="p-2 border-gray-500 border">
+            <h2 class="font-bold text-xl text-gray-900">${item[0]}</h2>
+            <p class="text-pink-600 font-extrabold text-2xl">${item[1]}</p>
+          </div>
+        `;
+      });
+    </script>
 
-    <div class="mt-6 mb-10">
-      <h2 class="font-bold text-xl">PADMAVATHI</h2>
-      <p class="text-pink-600 font-extrabold text-2xl">336-2</p>
-    </div>
   </div>
 
 </body>
 
+<body class="bg-orange-100">
+
+  <!-- NOTICE -->
+  <div class="bg-orange-300 text-red-700 text-center text-sm font-bold py-2 border-b border-orange-400">
+    ★ NOTICE ★  
+    <p class="text-black font-normal text-[12px] leading-4 mt-1">
+      यहां दिखाया गया रिजल्ट केवल मनोरंजन के लिए है।  
+      किसी भी प्रकार के नुकसान के लिए आप स्वयं जिम्मेदार होंगे।
+    </p>
+  </div>
+
+  <!-- TITLE BAR -->
+  <div class="bg-pink-600 text-white text-center py-2 text-sm font-bold mt-1">
+    WORLD & INDIA MOST FASTEST SATTA RESULT SERVICE
+  </div>
+
+  <!-- MAIN RESULT WRAPPER -->
+  <div class="w-full  mx-auto mt-2 p-2">
+
+    <!-- GREEN HEADER 1 -->
+    <div class="bg-lime-300 text-black text-center py-1 font-bold rounded">
+      KALYAN MORNING
+    </div>
+
+    <div class="bg-orange-200 py-4 rounded-b-lg shadow mt-1">
+      
+      <!-- Market Block -->
+      <div class="flex justify-between items-center px-4 py-2">
+        <div class="text-center flex-1">
+          <h2 class="font-bold text-gray-900 text-lg">KALYAN MORNING</h2>
+          <p class="text-[12px] text-gray-700">11:25 AM</p>
+          <p class="text-xl text-pink-700 font-extrabold">156-29-270</p>
+        </div>
+        <button class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs shadow">Play</button>
+      </div>
+
+      <!-- Market 2 -->
+      <div class="flex justify-between items-center px-4 py-2 border-t border-orange-300">
+        <div class="text-center flex-1">
+          <h2 class="font-bold text-gray-900 text-lg">MILAN MORNING</h2>
+          <p class="text-[12px] text-gray-700">10:45 AM</p>
+          <p class="text-xl text-pink-700 font-extrabold">450-18-900</p>
+        </div>
+        <button class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs shadow">Play</button>
+      </div>
+
+    </div>
+
+    <!-- GREEN HEADER 2 -->
+    <div class="bg-lime-300 text-black text-center py-1 font-bold rounded mt-6">
+      Sridevi • Time Bazar • Madhuri • Padmavati
+    </div>
+
+    <div class="bg-orange-200 py-4 rounded-b-lg shadow mt-1">
+
+      <!-- Auto-rendered results -->
+      <div id="resultList"></div>
+
+    </div>
+
+    <!-- GREEN HEADER 3 -->
+    <div class="bg-lime-300 text-black text-center py-1 font-bold rounded mt-6">
+      EVENING & DAY SPECIAL
+    </div>
+
+    <div class="bg-orange-200 py-4 rounded-b-lg shadow mt-1">
+      <div class="flex justify-between items-center px-4 py-2">
+        <div class="text-center flex-1">
+          <h2 class="font-bold text-gray-900 text-lg">TIME BAZAR DAY</h2>
+          <p class="text-[12px] text-gray-700">01:10 PM</p>
+          <p class="text-xl text-pink-700 font-extrabold">378-46-900</p>
+        </div>
+        <button class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs shadow">Play</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JAVASCRIPT DATA -->
+  <script>
+    const markets = [
+      { name: "SRIDEVI", time: "12:30 PM", result: "339-5" },
+      { name: "MAIN BAZAR MORNING", time: "11:55 AM", result: "126-96-150" },
+      { name: "MADHURI", time: "12:45 PM", result: "189-8" },
+      { name: "PADMAVATHI", time: "01:00 PM", result: "336-2" },
+      { name: "RADHA-RANI MORNING", time: "Loading...", result: "Loading..." },
+      { name: "MAHARANI", time: "12:15 PM", result: "246-3" }
+    ];
+
+    const box = document.getElementById("resultList");
+
+    markets.forEach(mkt => {
+      box.innerHTML += `
+        <div class="flex justify-between items-center px-2 py-2 border-t border-orange-300">
+            <button class="bg-blue-900 text-white px-3 py-1 rounded-full text-xs shadow">Jodi</button>
+          <div class="text-center flex-1">
+            <h2 class="font-bold text-bold text-lg">${mkt.name}</h2>
+            <p class="text-[12px] text-gray-700">${mkt.time}</p>
+            <p class="text-xl text-pink-700 font-extrabold">${mkt.result}</p>
+          </div>
+          <button class="bg-blue-900 text-white px-3 py-1 rounded-full text-xs shadow">Pannel</button>
+        </div>
+      `;
+    });
+  </script>
+
+</body>
 </html>
