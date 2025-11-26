@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Spot Game</title>
+
   <!-- SEO -->
   <meta name="description" content="Spot Game – Play Smart & Track Your Game Stats Easily." />
   <meta name="keywords" content="Spot Game, games, tracking, stats, online game" />
   <meta name="author" content="Spot Game Team" />
+
   <!-- OpenGraph (Social Media Preview) -->
   <meta property="og:title" content="Spot Game" />
   <meta property="og:description" content="Play Smart. Track Smarter. Spot Game PWA." />
@@ -21,7 +23,7 @@
   <link rel="apple-touch-icon" href="Logo.jpg">
 
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#1a62a3" />
 
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -43,32 +45,96 @@
     }
   </script>
 
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+    }
+
+    #abc {
+      background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20241020/pngtree-game-on-sleek-black-video-controller-ready-for-action-ultimate-control-image_16428840.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    #cde {
+      background-image: url("https://thumbs.dreamstime.com/b/concept-video-games-two-gamepads-levitate-abstract-background-wide-banner-181892875.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    #efg {
+      background-image: url("https://previews.123rf.com/images/maximlacrim/maximlacrim2104/maximlacrim210400045/167835171-video-game-controller-background-gadgets-and-devices-seamless-pattern-vector-eps10.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .smooth {
+      transition: all 0.3s ease;
+    }
+  </style>
 </head>
 
-<style>
-  .spin {
-    animation: spinAnim 1s linear infinite;
-  }
+<body class="bg-gray-100">
 
-  @keyframes spinAnim {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-</style>
+  <!-- ================= SIDEBAR OVERLAY ================= -->
+  <div id="sidebarOverlay" class="fixed inset-0 bg-black bg-opacity-40 hidden opacity-0 backdrop-blur-sm z-50 smooth">
+  </div>
 
-<body class="bg-orange-100 text-center">
-  <!-- 🔵 FIXED REFRESH BUTTON -->
-  <!-- Refresh Button -->
-  <button id="refreshBtn" class="fixed bottom-8 right-10 bg-blue-900 mb-4 text-blue-700 px-4 py-3 rounded-full shadow-lg 
-         hover:bg-blue-100 transition transform hover:scale-110">
-    <i id="refreshIcon" class="fas fa-sync-alt text-white text-2xl"></i>
-  </button>
+  <!-- ================= SIDEBAR ================= -->
+  <div id="sidebar"
+    class="fixed top-0 left-0 h-full w-72 bg-white shadow-2xl -translate-x-full rounded-r-3xl z-50 smooth">
 
+    <!-- USER HEADER -->
+    <div class="p-6 bg-gray-100 border-b flex gap-4">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-16 h-16 rounded-full shadow-md object-cover" />
+      <div>
+        <p class="font-semibold text-gray-900 text-lg">Spot Games</p>
+        <p class="text-sm text-blue-600 cursor-pointer">Profile</p>
+      </div>
+    </div>
 
-  <!-- HEADER -->
+    <!-- MENU ITEMS -->
+    <div class="p-6 space-y-6 hidden  hidden">
+      <div class="flex items-center gap-4 text-gray-700 hover:text-blue-600 cursor-pointer">
+        <i class="fa-solid fa-house text-xl"></i>
+        <span>Home</span>
+      </div>
 
-  <div class="bg-orange-200  z-40 left-0 w-full   shadow-md rounded-b-3xl">
+      <div class="flex items-center gap-4 text-gray-700 hover:text-blue-600 cursor-pointer">
+        <i class="fa-solid fa-box text-xl"></i>
+        <span>My Packages</span>
+      </div>
+
+      <div class="flex items-center gap-4 text-gray-700 hover:text-blue-600 cursor-pointer">
+        <i class="fa-solid fa-location-dot text-xl"></i>
+        <span>Track Order</span>
+      </div>
+
+      <div class="flex items-center gap-4 text-gray-700 hover:text-blue-600 cursor-pointer">
+        <i class="fa-solid fa-gear text-xl"></i>
+        <span>Settings</span>
+      </div>
+
+      <div class="flex items-center gap-4 text-gray-700 hover:text-blue-600 cursor-pointer">
+        <i class="fa-solid fa-headset text-xl"></i>
+        <span>Support</span>
+      </div>
+    </div>
+
+    <!-- LOGOUT BUTTON -->
+    <div class="absolute bottom-5 left-0 w-full px-6">
+      <button class="w-full py-3 bg-blue-400 text-white font-semibold rounded-xl hover:bg-red-600 shadow-lg">
+        Logout
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- ===================== TOP HEADER ============================ -->
+  <!-- ============================================================= -->
+  <!-- FIXED TOP HEADER -->
+  <div class="fixed top-0 z-40 left-0 w-full bg-white shadow-md rounded-b-3xl">
     <div class="p-5">
 
       <div class="flex justify-between items-center">
@@ -81,14 +147,15 @@
 
         <!-- RIGHT ICONS -->
         <div class="flex items-center gap-5 text-gray-900 text-2xl">
-          <i onclick="window.location.href='App.html'" class="fa-solid fa-mobile hover:text-blue-600 transition"></i>
+          <i class="fa-regular fa-bell hover:text-blue-600 transition"></i>
+          <i class="fa-solid fa-bars hover:text-blue-600 transition"></i>
         </div>
 
       </div>
 
       <!-- Search Bar -->
       <div class="mt-4">
-        <div class="bg-orange-100 rounded-2xl flex items-center px-4 py-3 shadow-inner">
+        <div class="bg-gray-100 rounded-2xl flex items-center px-4 py-3 shadow-inner">
           <i class="fa-solid fa-search text-gray-500 mr-3"></i>
           <input type="text" placeholder="Search Your Data ..."
             class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500" />
@@ -98,198 +165,216 @@
     </div>
   </div>
 
-  <!-- NOTICE -->
-  <div class="bg-orange-300 mt-4 mx-4 p-3 rounded-lg text-[12px] leading-4 border border-orange-400 shadow">
-    dpboss Service is free.
-    We provide fast satta results for all markets.
-    Check your daily lucky numbers and live updates here.
-  </div>
+  <!-- Add margin so page content doesn't hide under header -->
+  <div class="mt-[165px]"></div>
 
-  <div class="mx-4 mt-3 bg-white p-5 rounded-2xl shadow-lg border border-gray-200">
-    <div class="flex items-center justify-between">
+  <!-- ============================================================= -->
+  <!-- ======================= MAIN CARD =========================== -->
+  <!-- ============================================================= -->
+  <div class=" mt-5">
+    <!-- CAROUSEL WRAPPER -->
+    <div class=" w-full overflow-hidden mt-6">
+      <!-- Slides Container -->
+      <div id="slider" class="flex transition-transform duration-700 ease-in-out">
 
-      <div class="text-left">
-        <p class="text-base font-semibold text-gray-900">Golden Ank</p>
-        <p class="text-2xl font-extrabold text-pink-600">2-7-4-9</p>
-      </div>
+        <!-- Slide 1 -->
+        <div class="min-w-full px-4">
+          <div id="abc" class="bg-gray-800 text-white p-5 rounded-3xl shadow-lg">
+            <span class="bg-lime-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md">IN TRANSIT</span>
 
-      <div class="text-right">
-        <p class="text-base font-semibold text-gray-900">Final Ank</p>
-        <p class="text-2xl font-extrabold text-pink-600">8</p>
-      </div>
+            <div class="mt-4">
+              <p class="text-xl font-semibold">Norra Nynäshamn → Stockholm</p>
+              <p class="text-sm text-gray-300 mt-1">Order ID #29698-98971</p>
+            </div>
 
-    </div>
-  </div>
+            <div class="w-full bg-gray-700 h-2 rounded-full mt-5">
+              <div class="h-2 bg-lime-400 rounded-full" style="width: 65%"></div>
+            </div>
 
-  <!-- WARNING BOX -->
-  <div class="bg-red-600 text-white px-4 py-4 mx-4 mt-4 rounded-lg text-[13px] leading-5 shadow-lg">
-    कल्याण मटका, मटका चार्ट, बॉम्बे मटका, सट्टा किंग & लाइव अपडेट यहाँ उपलब्ध।
-    फास्ट रिजल्ट देखने के लिए हमारा पेज रोज़ चेक करें।
-  </div>
-
-  <!-- LIVE RESULT HEADER -->
-  <div
-    class="bg-blue-900 text-white py-3 mx-4 rounded-2xl mt-5 text-lg font-bold shadow flex items-center justify-center gap-3">
-    <span class="relative flex h-4 w-4">
-      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-100 opacity-75"></span>
-      <span class="relative inline-flex rounded-full h-4 w-4 bg-green-500"></span>
-    </span>
-    <span>LIVE RESULT</span>
-  </div>
-
-
-  <!-- FASTEST UPDATE TEXT -->
-  <p class="mt-3 text-gray-800 text-lg font-extrabold">सबसे तेज़ लाइव रिजल्ट यहीं मिलेगा</p>
-
-  <div class="mt-5 space-y-6 pb-10">
-    <div id="resultsContainer">
-      <div class="p-4 border border-gray-400 rounded-lg animate-pulse w-full  mx-4 text-center">
-        <h2 class="h-6 bg-gray-300 rounded w-1/3 mb-3 mx-auto"></h2>
-        <p class="h-8 bg-gray-300 rounded w-1/5 mx-auto"></p>
-      </div>
-      <div class="p-4 border border-gray-400 rounded-lg animate-pulse w-full  mx-4 text-center">
-        <h2 class="h-6 bg-gray-300 rounded w-1/3 mb-3 mx-auto"></h2>
-        <p class="h-8 bg-gray-300 rounded w-1/5 mx-auto"></p>
-      </div>
-      <div class="p-4 border border-gray-400 rounded-lg animate-pulse w-full  mx-4 text-center">
-        <h2 class="h-6 bg-gray-300 rounded w-1/3 mb-3 mx-auto"></h2>
-        <p class="h-8 bg-gray-300 rounded w-1/5 mx-auto"></p>
-      </div>
-      <div class="p-4 border border-gray-400 rounded-lg animate-pulse w-full  mx-4 text-center">
-        <h2 class="h-6 bg-gray-300 rounded w-1/3 mb-3 mx-auto"></h2>
-        <p class="h-8 bg-gray-300 rounded w-1/5 mx-auto"></p>
-      </div>
-      <div class="p-4 border border-gray-400 rounded-lg animate-pulse w-full  mx-4 text-center">
-        <h2 class="h-6 bg-gray-300 rounded w-1/3 mb-3 mx-auto"></h2>
-        <p class="h-8 bg-gray-300 rounded w-1/5 mx-auto"></p>
-      </div>
-      <div class="p-4 border border-gray-400 rounded-lg animate-pulse w-full  mx-4 text-center">
-        <h2 class="h-6 bg-gray-300 rounded w-1/3 mb-3 mx-auto"></h2>
-        <p class="h-8 bg-gray-300 rounded w-1/5 mx-auto"></p>
-      </div>
-      <div class="p-4 border border-gray-400 rounded-lg animate-pulse w-full  mx-4 text-center">
-        <h2 class="h-6 bg-gray-300 rounded w-1/3 mb-3 mx-auto"></h2>
-        <p class="h-8 bg-gray-300 rounded w-1/5 mx-auto"></p>
-      </div>
-      <div class="p-4 border border-gray-400 rounded-lg animate-pulse w-full  mx-4 text-center">
-        <h2 class="h-6 bg-gray-300 rounded w-1/3 mb-3 mx-auto"></h2>
-        <p class="h-8 bg-gray-300 rounded w-1/5 mx-auto"></p>
-      </div>
-
-    </div>
-  </div>
-</body>
-
-<section class="bg-orange-100 ">
-
-  <!-- NOTICE -->
-  <div class="bg-orange-300 text-red-700 text-center text-sm font-bold py-2 border-b border-orange-400">
-    ★ NOTICE ★
-    <p class="text-black font-normal text-[12px] leading-4 mt-1">
-      यहां दिखाया गया रिजल्ट केवल मनोरंजन के लिए है।
-      किसी भी प्रकार के नुकसान के लिए आप स्वयं जिम्मेदार होंगे।
-    </p>
-  </div>
-
-  <!-- TITLE BAR -->
-  <div class="bg-pink-600 text-white text-center py-2 text-sm font-bold mt-1">
-    WORLD & INDIA MOST FASTEST SATTA RESULT SERVICE
-  </div>
-
-  <!-- MAIN RESULT WRAPPER -->
-  <div class="w-full  mx-auto  hidden  p-2">
-
-
-
-    <div class="bg-orange-200 py-4 rounded-b-lg shadow mt-1">
-      <div id="resultList" class="mx-4">
-
-
-      </div>
-    </div>
-
-
-  </div>
-
-  <!-- JAVASCRIPT DATA -->
-  <script>
-
-    const API_URL =
-      "https://script.google.com/macros/s/AKfycbyW6iFWJpgLR-oogi_GysEp_RXph9d9vaQ2idlMgsQQVAg3ee_XeKuqyI_HDyaqnwlG/exec";
-
-    function loadData() {
-      return fetch(API_URL + "?action=read")
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.result !== "success") return;
-
-          const container = document.getElementById("resultsContainer");
-          container.innerHTML = "";
-
-          data.records.reverse().forEach((r) => {
-            const resultText = [r.Jodi, r.Marks, r.Pennel]
-              .filter(Boolean)
-              .join(" - ");
-            const card = `
-              <div class="p-4 border-gray-500 border">
-            <h2 class="font-extrabold text-xl text-black">${r.Applicant}</h2>
-            <p class="text-pink-600 font-extrabold text-2xl">${resultText}</p>
+            <p class="text-xs text-gray-400 mt-4">Departed: 15 Dec — 03:27 PM</p>
           </div>
-             
-            `;
-            container.innerHTML += card;
-          });
-        });
-    }
-
-    let isLoading = false;
-    function autoLoad() {
-      if (isLoading) return;
-      isLoading = true;
-
-      loadData().finally(() => (isLoading = false));
-    }
-
-    loadData();
-    setInterval(autoLoad, 5000);
-
-    const btn = document.getElementById("refreshBtn");
-    const icon = document.getElementById("refreshIcon");
-
-    btn.addEventListener("click", () => {
-      icon.classList.add("spin");   // start spin
-
-      setTimeout(() => {
-        icon.classList.remove("spin"); // stop spin after 3s
-        loadData(); // optional refresh action
-      }, 3000);
-    });
-
-
-    const markets = [
-      { name: "KALYAN MORNING", result: "156-29-270", open: "11:15 AM", close: "12:15 PM" },
-      { name: "MILAN MORNING", result: "238-36-178", open: "10:30 AM", close: "11:30 AM" }
-    ];
-
-
-    const box = document.getElementById("resultList");
-
-    markets.forEach(mkt => {
-      box.innerHTML += `
-        <div class="flex justify-between items-center px-2 py-2 border-t border-orange-300">
-            <button class="bg-blue-900 text-white px-3 py-1 rounded-full text-xs shadow">Jodi</button>
-          <div class="text-center flex-1">
-            <h2 class="font-bold text-bold text-lg">${mkt.name}</h2>
-            <p class="text-[12px] text-gray-700">${mkt.time}</p>
-            <p class="text-xl text-pink-700 font-extrabold">${mkt.result}</p>
-          </div>
-          <button class="bg-blue-900 text-white px-3 py-1 rounded-full text-xs shadow">Pannel</button>
         </div>
-      `;
-    });
-  </script>
 
-</section>
+        <!-- Slide 2 -->
+        <div class="min-w-full px-4">
+          <div id="cde" class="bg-gray-800 text-white p-5 rounded-3xl shadow-lg">
+            <span class="bg-blue-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md">PACKED</span>
+
+            <div class="mt-4">
+              <p class="text-xl font-semibold">Gothenburg → Malmö</p>
+              <p class="text-sm text-gray-300 mt-1">Order ID #19748-88423</p>
+            </div>
+
+            <div class="w-full bg-gray-700 h-2 rounded-full mt-5">
+              <div class="h-2 bg-blue-400 rounded-full" style="width: 40%"></div>
+            </div>
+
+            <p class="text-xs text-gray-400 mt-4">Departed: 17 Dec — 05:10 PM</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="min-w-full px-4">
+          <div id="efg" class="bg-gray-800 text-white p-5 rounded-3xl shadow-lg">
+            <span class="bg-rose-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md">DELAYED</span>
+
+            <div class="mt-4">
+              <p class="text-xl font-semibold">Oslo → Copenhagen</p>
+              <p class="text-sm text-gray-300 mt-1">Order ID #92341-88234</p>
+            </div>
+
+            <div class="w-full bg-gray-700 h-2 rounded-full mt-5">
+              <div class="h-2 bg-rose-400 rounded-full" style="width: 20%"></div>
+            </div>
+
+            <p class="text-xs text-gray-400 mt-4">Departed: 18 Dec — 07:20 PM</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Indicators (Dots) -->
+      <div class="flex justify-center gap-3 mt-2">
+        <div class="dot w-2 h-2 bg-gray-400 rounded-full"></div>
+        <div class="dot w-2 h-2 bg-gray-400 rounded-full"></div>
+        <div class="dot w-2 h-2 bg-gray-400 rounded-full"></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="p-3">
+    <!-- MENU ICONS --> <span id="Category"></span>
+    <div class="mt-2 grid grid-cols-2 gap-5 text-center w-full ">
+
+      <!-- SINGLE -->
+      <div id="alpha" class="flex flex-col items-center cursor-pointer w-full">
+        <div id="alphachild"
+          class="w-full h-12 bg-[#f1f1f1ff] rounded-2xl shadow-md flex items-center justify-center text-gray-700 text-2xl">
+          <i class="fa-solid fa-dollar-sign"></i>
+        </div>
+        <p id="a" class="mt-2 text-gray-800 text-sm font-semibold">Single</p>
+      </div>
+
+      <!-- DOUBLE -->
+      <div id="beeta" class="flex flex-col items-center cursor-pointer w-full">
+        <div id="beetachild"
+          class="w-full h-12 bg-[#f1f1f1ff] rounded-2xl shadow-md flex items-center justify-center text-gray-700 text-2xl">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <p id="b" class="mt-2 text-gray-800 text-sm font-semibold">Double</p>
+      </div>
+    </div>
+
+
+    <!-- DYNAMIC CONTENT AREA -->
+    <div id="dataTable"><!-- Loader Container -->
+      <!-- PRE LOADER -->
+      <div id="preLoader" class="mt-4 space-y-4">
+        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
+          <div class="flex justify-between items-center">
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-40 mb-2"></div>
+              <div class="h-3 bg-gray-200 rounded w-24"></div>
+            </div>
+            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
+          <div class="flex justify-between items-center">
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-36 mb-2"></div>
+              <div class="h-3 bg-gray-200 rounded w-20"></div>
+            </div>
+            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
+          <div class="flex justify-between items-center">
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-48 mb-2"></div>
+              <div class="h-3 bg-gray-200 rounded w-32"></div>
+            </div>
+            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
+          <div class="flex justify-between items-center">
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-40 mb-2"></div>
+              <div class="h-3 bg-gray-200 rounded w-24"></div>
+            </div>
+            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
+          <div class="flex justify-between items-center">
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-36 mb-2"></div>
+              <div class="h-3 bg-gray-200 rounded w-20"></div>
+            </div>
+            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
+          <div class="flex justify-between items-center">
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-48 mb-2"></div>
+              <div class="h-3 bg-gray-200 rounded w-32"></div>
+            </div>
+            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- ============================================================ -->
+    <!-- ================= BOTTOM NAVIGATION ========================= -->
+    <!-- ============================================================= -->
+    <div
+      class="fixed hidden bottom-0 left-0 w-full bg-white rounded-t-3xl shadow-[0_-4px_20px_rgba(0,0,0,0.08)] py-4 px-6 flex justify-between items-center text-gray-500 z-40">
+
+      <div class="flex flex-col items-center cursor-pointer w-1/4 text-blue-600">
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center shadow-md mb-1">
+          <i class="fa-solid fa-box text-xl"></i>
+        </div>
+        <span class="text-xs font-semibold">Home</span>
+      </div>
+
+      <div class="flex flex-col items-center cursor-pointer w-1/4">
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center shadow-md mb-1">
+          <i class="fa-solid fa-box text-xl"></i>
+        </div>
+        <span class="text-xs font-semibold">Packers</span>
+      </div>
+
+      <div class="flex flex-col items-center cursor-pointer w-1/4">
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center shadow-md mb-1">
+          <i class="fa-solid fa-box text-xl"></i>
+        </div>
+        <span class="text-xs font-semibold">Search</span>
+      </div>
+
+      <div class="flex flex-col items-center cursor-pointer w-1/4">
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center shadow-md mb-1">
+          <i class="fa-solid fa-box text-xl"></i>
+        </div>
+        <span class="text-xs font-semibold">Settings</span>
+      </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- =================== JAVASCRIPT ============================== -->
+    <!-- ============================================================= -->
+
+
+</body>
 <script src="backend.js"></script>
 
 </html>
