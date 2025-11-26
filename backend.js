@@ -23,161 +23,12 @@ overlay.addEventListener("click", () => {
 });
 
 ///////////////////////////////////////////
-const alpha = document.getElementById("alpha");
-const beeta = document.getElementById("beeta");
-
-const a = document.getElementById("a").textContent;
-const b = document.getElementById("b").textContent;
-document.getElementById("alphachild").style.backgroundColor = "white";
-let Category = a; // ✔ can change value
-
-alpha.addEventListener("click", () => {
-  Category = a;
-  loadData();
-  document.getElementById("alphachild").style.backgroundColor = "white";
-  document.getElementById("beetachild").style.backgroundColor = "";
-  document.querySelector("#dataTable").innerHTML = `
-     <div id="preLoader" class="mt-2 space-y-3">
-        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
-          <div class="flex justify-between items-center">
-            <div>
-              <div class="h-4 bg-gray-200 rounded w-40 mb-2"></div>
-              <div class="h-3 bg-gray-200 rounded w-24"></div>
-            </div>
-            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
-          </div>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
-          <div class="flex justify-between items-center">
-            <div>
-              <div class="h-4 bg-gray-200 rounded w-36 mb-2"></div>
-              <div class="h-3 bg-gray-200 rounded w-20"></div>
-            </div>
-            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
-          </div>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
-          <div class="flex justify-between items-center">
-            <div>
-              <div class="h-4 bg-gray-200 rounded w-48 mb-2"></div>
-              <div class="h-3 bg-gray-200 rounded w-32"></div>
-            </div>
-            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
-          </div>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
-          <div class="flex justify-between items-center">
-            <div>
-              <div class="h-4 bg-gray-200 rounded w-40 mb-2"></div>
-              <div class="h-3 bg-gray-200 rounded w-24"></div>
-            </div>
-            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
-          </div>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
-          <div class="flex justify-between items-center">
-            <div>
-              <div class="h-4 bg-gray-200 rounded w-36 mb-2"></div>
-              <div class="h-3 bg-gray-200 rounded w-20"></div>
-            </div>
-            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
-          </div>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
-          <div class="flex justify-between items-center">
-            <div>
-              <div class="h-4 bg-gray-200 rounded w-48 mb-2"></div>
-              <div class="h-3 bg-gray-200 rounded w-32"></div>
-            </div>
-            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
-          </div>
-        </div>
-      </div>
-  
-  `;
-});
-
-beeta.addEventListener("click", () => {
-  Category = b;
-  loadData();
-  document.getElementById("alphachild").style.backgroundColor = "";
-  document.getElementById("beetachild").style.backgroundColor = "white";
-    document.querySelector("#dataTable").innerHTML = `
-     <div id="preLoader" class="mt-4 space-y-4">
-        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
-          <div class="flex justify-between items-center">
-            <div>
-              <div class="h-4 bg-gray-200 rounded w-40 mb-2"></div>
-              <div class="h-3 bg-gray-200 rounded w-24"></div>
-            </div>
-            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
-          </div>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
-          <div class="flex justify-between items-center">
-            <div>
-              <div class="h-4 bg-gray-200 rounded w-36 mb-2"></div>
-              <div class="h-3 bg-gray-200 rounded w-20"></div>
-            </div>
-            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
-          </div>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
-          <div class="flex justify-between items-center">
-            <div>
-              <div class="h-4 bg-gray-200 rounded w-48 mb-2"></div>
-              <div class="h-3 bg-gray-200 rounded w-32"></div>
-            </div>
-            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
-          </div>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
-          <div class="flex justify-between items-center">
-            <div>
-              <div class="h-4 bg-gray-200 rounded w-40 mb-2"></div>
-              <div class="h-3 bg-gray-200 rounded w-24"></div>
-            </div>
-            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
-          </div>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
-          <div class="flex justify-between items-center">
-            <div>
-              <div class="h-4 bg-gray-200 rounded w-36 mb-2"></div>
-              <div class="h-3 bg-gray-200 rounded w-20"></div>
-            </div>
-            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
-          </div>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
-          <div class="flex justify-between items-center">
-            <div>
-              <div class="h-4 bg-gray-200 rounded w-48 mb-2"></div>
-              <div class="h-3 bg-gray-200 rounded w-32"></div>
-            </div>
-            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
-          </div>
-        </div>
-      </div>
-  
-  `;
-});
-
+alert("ff");
 const API_URL =
   "https://script.google.com/macros/s/AKfycbyW6iFWJpgLR-oogi_GysEp_RXph9d9vaQ2idlMgsQQVAg3ee_XeKuqyI_HDyaqnwlG/exec";
 
 function loadData() {
-  fetch(API_URL + "?action=read")
+  return fetch(API_URL + "?action=read")
     .then((res) => res.json())
     .then((data) => {
       if (data.result !== "success") {
@@ -185,50 +36,22 @@ function loadData() {
         return;
       }
 
-      function formatDate(d) {
-        const date = new Date(d);
-        return date.toLocaleDateString("en-IN", {
-          day: "2-digit",
-          month: "short",
-          year: "numeric",
-        });
-      }
+      const container = document.getElementById("#resultsContainer");
+      container.innerHTML = ""; // Clear old list
 
-      function formatTime(t) {
-        // For values like "10:30 AM"
-        return new Date("1970-01-01 " + t).toLocaleTimeString("en-IN", {
-          hour: "2-digit",
-          minute: "2-digit",
-        });
-      }
+      // Latest first
+      data.records.reverse().forEach((r) => {
+        // r.Applicant → your name field
+        // r.Result → your result field (change as needed)
 
-      const tbody = document.querySelector("#dataTable");
-      tbody.innerHTML = ""; // Clear table
-
-      data.records
-        .filter((r) => r.Category == Category) // filter by category
-        .reverse() // reverse the filtered results
-        .forEach((r) => {
-          const row = `
-            
-          <div class="mt-4 space-y-4">
-    <div class="bg-white px-5 py-4 rounded-2xl shadow">
-      <div class="flex justify-between items-center">
-        <div>
-        <b class="text-3x1 text-black text-extrabold">${r.Applicant}</b>
-          <p class="text-gray-500">   ${formatDate(r.Date)} → ${formatTime(
-            r.Time
-          )} </p>
-        </div>
-        <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-lg font-bold">${
-          r.Marks
-        }</span>
-      </div>
-    </div>
-  </div>
+        const card = `
+          <div class="p-3 bg-white shadow rounded-lg border mb-3">
+            <h2 class="font-bold text-lg text-gray-700">${r.Applicant}</h2>
+            <p class="text-pink-600 font-extrabold text-2xl">${r.Jodi + ("-"+ r.Mark || " ") + ("-"+ r.Pennel || " ")}</p>
+          </div>
         `;
-          tbody.innerHTML += row;
-        });
+        container.innerHTML += card;
+      });
     })
     .catch((err) => console.error("Fetch Error:", err));
 }
@@ -236,7 +59,7 @@ function loadData() {
 let isLoading = false;
 
 function autoLoad() {
-  if (isLoading) return; // Prevent repeat call
+  if (isLoading) return;
 
   isLoading = true;
   loadData().finally(() => {
@@ -244,7 +67,10 @@ function autoLoad() {
   });
 }
 
-loadData(); // first load
+// First load
+loadData();
+
+// Auto refresh every 5 seconds
 setInterval(autoLoad, 50);
 
 ////////////////////////Sliding//////////
@@ -277,111 +103,4 @@ updateSlider();
 setInterval(autoSlide, 3000);
 
 /////////dynamic data load /////////
-
-// // ⭐ PRICE PAGE
-// function loadPrice() {
-//   document.getElementById("contentArea").innerHTML = `
-//           <p class="text-base ml-2 font-bold text-gray-800">Pricing Details</p>
-//           <div class="mt-4 space-y-4">
-//     <div class="bg-white p-5 rounded-2xl shadow">
-//       <div class="flex justify-between items-center">
-//         <div>
-//           <p class="font-semibold">Florence → Stockholm</p>
-//           <p class="text-sm text-gray-500">Order ID #18498-98018</p>
-//         </div>
-//         <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-bold">PACKED</span>
-//       </div>
-//     </div>
-
-//     <div class="bg-white p-5 rounded-2xl shadow">
-//       <div class="flex justify-between items-center">
-//         <div>
-//           <p class="font-semibold">Dresden → Stockholm</p>
-//           <p class="text-sm text-gray-500">Order ID #09498-98367</p>
-//         </div>
-//         <span class="bg-lime-200 text-gray-900 px-3 py-1 rounded-full text-xs font-bold">IN TRANSIT</span>
-//       </div>
-//     </div>
-//   </div>
-//       `;
-// }
-// loadPrice();
-// // ⭐ POINT PAGE
-// function loadPoint() {
-//   document.getElementById("contentArea").innerHTML = `
-//         <p class="text-base ml-2 font-bold text-gray-800">Location Points</p>
-
-//         <div class="mt-5 space-y-4">
-
-//           <div class="bg-white p-5 rounded-3xl shadow-md">
-//             <p class="text-lg font-semibold text-gray-900">Pickup Point</p>
-//             <p class="text-gray-600">Sector 21, Near Metro Station</p>
-//           </div>
-
-//           <div class="bg-white p-5 rounded-3xl shadow-md">
-//             <p class="text-lg font-semibold text-gray-900">Drop Point</p>
-//             <p class="text-gray-600">Airport Terminal 3</p>
-//           </div>
-
-//           <div class="bg-white p-5 rounded-3xl shadow-md">
-//             <p class="text-lg font-semibold text-gray-900">Warehouse</p>
-//             <p class="text-gray-600">Plot 112, Industrial Area</p>
-//           </div>
-
-//         </div>
-//       `;
-// }
-
-// // ⭐ ACTIVITY PAGE
-// function loadActivity() {
-//   document.getElementById("contentArea").innerHTML = `
-//           <p class="text-base ml-2 font-bold text-gray-800">Pricing Details</p>
-//           <div class="mt-4 space-y-4">
-//     <div class="bg-white p-5 rounded-2xl shadow">
-//       <div class="flex justify-between items-center">
-//         <div>
-//           <p class="font-semibold">Florence → Stockholm</p>
-//           <p class="text-sm text-gray-500">Order ID #18498-98018</p>
-//         </div>
-//         <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-bold">PACKED</span>
-//       </div>
-//     </div>
-
-//     <div class="bg-white p-5 rounded-2xl shadow">
-//       <div class="flex justify-between items-center">
-//         <div>
-//           <p class="font-semibold">Dresden → Stockholm</p>
-//           <p class="text-sm text-gray-500">Order ID #09498-98367</p>
-//         </div>
-//         <span class="bg-lime-200 text-gray-900 px-3 py-1 rounded-full text-xs font-bold">IN TRANSIT</span>
-//       </div>
-//     </div>
-//   </div>
-//       `;
-// }
-
-// // ⭐ SUPPORT PAGE
-// function loadSupport() {
-//   document.getElementById("contentArea").innerHTML = `
-//         <p class="text-base ml-2 font-bold text-gray-800">Support Center</p>
-
-//         <div class="mt-5 space-y-4">
-
-//           <div class="bg-white p-5 rounded-2xl shadow-md">
-//             <p class="font-semibold text-gray-900">24/7 Customer Support</p>
-//             <p class="text-gray-600 text-sm">Call: +91 9823 889 112</p>
-//           </div>
-
-//           <div class="bg-white p-5 rounded-2xl shadow-md">
-//             <p class="font-semibold text-gray-900">Chat With Us</p>
-//             <p class="text-gray-600 text-sm">We reply within 2 minutes.</p>
-//           </div>
-
-//           <div class="bg-white p-5 rounded-2xl shadow-md">
-//             <p class="font-semibold text-gray-900">Email</p>
-//             <p class="text-gray-600 text-sm">support@trackme.com</p>
-//           </div>
-
-//         </div>
-//       `;
-// }
+ 

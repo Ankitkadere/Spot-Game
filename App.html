@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spot Game</title>
+  <!-- SEO -->
+  <meta name="description" content="Spot Game – Play Smart & Track Your Game Stats Easily." />
+  <meta name="keywords" content="Spot Game, games, tracking, stats, online game" />
+  <meta name="author" content="Spot Game Team" />
+  <!-- OpenGraph (Social Media Preview) -->
+  <meta property="og:title" content="Spot Game" />
+  <meta property="og:description" content="Play Smart. Track Smarter. Spot Game PWA." />
+  <meta property="og:image" content="Logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/" />
+
+  <link rel="icon" type="image/png" sizes="192x192" href="Logo.jpg" />
+  <link rel="apple-touch-icon" href="Logo.jpg">
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff" />
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Spot Game">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("service-worker.js")
+          .then(() => console.log("Service Worker Registered"));
+      });
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+    }
+
+    #abc {
+      background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20241020/pngtree-game-on-sleek-black-video-controller-ready-for-action-ultimate-control-image_16428840.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    #cde {
+      background-image: url("https://thumbs.dreamstime.com/b/concept-video-games-two-gamepads-levitate-abstract-background-wide-banner-181892875.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    #efg {
+      background-image: url("https://previews.123rf.com/images/maximlacrim/maximlacrim2104/maximlacrim210400045/167835171-video-game-controller-background-gadgets-and-devices-seamless-pattern-vector-eps10.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .smooth {
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- ================= SIDEBAR OVERLAY ================= -->
+  <div id="sidebarOverlay" class="fixed inset-0 bg-black bg-opacity-40 hidden opacity-0 backdrop-blur-sm z-50 smooth">
+  </div>
+
+  <!-- ================= SIDEBAR ================= -->
+  <div id="sidebar"
+    class="fixed top-0 left-0 h-full w-72 bg-white shadow-2xl -translate-x-full rounded-r-3xl z-50 smooth">
+
+    <!-- USER HEADER -->
+    <div class="p-6 bg-gray-100 border-b flex gap-4">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-16 h-16 rounded-full shadow-md object-cover" />
+      <div>
+        <p class="font-semibold text-gray-900 text-lg">Spot Games</p>
+        <p class="text-sm text-blue-600 cursor-pointer">Profile</p>
+      </div>
+    </div>
+
+    <!-- MENU ITEMS -->
+    <div class="p-6 space-y-6 hidden  hidden">
+      <div class="flex items-center gap-4 text-gray-700 hover:text-blue-600 cursor-pointer">
+        <i class="fa-solid fa-house text-xl"></i>
+        <span>Home</span>
+      </div>
+
+      <div class="flex items-center gap-4 text-gray-700 hover:text-blue-600 cursor-pointer">
+        <i class="fa-solid fa-box text-xl"></i>
+        <span>My Packages</span>
+      </div>
+
+      <div class="flex items-center gap-4 text-gray-700 hover:text-blue-600 cursor-pointer">
+        <i class="fa-solid fa-location-dot text-xl"></i>
+        <span>Track Order</span>
+      </div>
+
+      <div class="flex items-center gap-4 text-gray-700 hover:text-blue-600 cursor-pointer">
+        <i class="fa-solid fa-gear text-xl"></i>
+        <span>Settings</span>
+      </div>
+
+      <div class="flex items-center gap-4 text-gray-700 hover:text-blue-600 cursor-pointer">
+        <i class="fa-solid fa-headset text-xl"></i>
+        <span>Support</span>
+      </div>
+    </div>
+
+    <!-- LOGOUT BUTTON -->
+    <div class="absolute bottom-5 left-0 w-full px-6">
+      <button class="w-full py-3 bg-blue-400 text-white font-semibold rounded-xl hover:bg-red-600 shadow-lg">
+        Logout
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- ===================== TOP HEADER ============================ -->
+  <!-- ============================================================= -->
+  <!-- FIXED TOP HEADER -->
+  <div class="fixed top-0 z-40 left-0 w-full bg-white shadow-md rounded-b-3xl">
+    <div class="p-5">
+
+      <div class="flex justify-between items-center">
+
+        <!-- LEFT PROFILE BUTTON -->
+        <div id="openSidebar" class="flex items-center gap-3 cursor-pointer">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-11 h-11 rounded-full shadow-md" />
+          <p class="font-extrabold text-black text-2xl">Spot Game</p>
+        </div>
+
+        <!-- RIGHT ICONS -->
+        <div class="flex items-center gap-5 text-gray-900 text-2xl">
+          <i class="fa-regular fa-bell hover:text-blue-600 transition"></i>
+          <i onclick="window.location.href='Demo.html'" class="fa-solid fa-bars hover:text-blue-600 transition"></i>
+        </div>
+
+      </div>
+
+      <!-- Search Bar -->
+      <div class="mt-4">
+        <div class="bg-gray-100 rounded-2xl flex items-center px-4 py-3 shadow-inner">
+          <i class="fa-solid fa-search text-gray-500 mr-3"></i>
+          <input type="text" placeholder="Search Your Data ..."
+            class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Add margin so page content doesn't hide under header -->
+  <div class="mt-[165px]"></div>
+
+  <!-- ============================================================= -->
+  <!-- ======================= MAIN CARD =========================== -->
+  <!-- ============================================================= -->
+  <div class=" mt-5 mx-3 rounded-3xl ">
+    <!-- CAROUSEL WRAPPER -->
+    <div class=" w-full overflow-hidden mt-6">
+      <!-- Slides Container -->
+      <div id="slider" class="flex transition-transform duration-700 ease-in-out">
+
+        <!-- Slide 1 -->
+        <div class="min-w-full">
+          <div id="abc" class="bg-gray-800 text-white p-5 rounded-3xl shadow-lg">
+            <span class="bg-lime-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md">IN TRANSIT</span>
+
+            <div class="mt-4">
+              <p class="text-xl font-semibold">Best Game → Play Online </p>
+              <p class="text-sm text-gray-300 mt-1">Try this game & get ammount</p>
+            </div>
+
+            <div class="w-full bg-gray-700 h-2 rounded-full mt-5">
+              <div class="h-2 bg-lime-400 rounded-full" style="width: 25%"></div>
+            </div>
+
+            <p class="text-xs text-gray-400 mt-4">Starting — Ending</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="min-w-full ">
+          <div id="cde" class="bg-gray-800 text-white p-5 rounded-3xl shadow-lg">
+            <span class="bg-blue-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md">PACKED</span>
+
+            <div class="mt-4">
+              <p class="text-xl font-semibold">Instatly Get → Ammount</p>
+              <p class="text-sm text-gray-300 mt-1">Best of luck for play game</p>
+            </div>
+
+            <div class="w-full bg-gray-700 h-2 rounded-full mt-5">
+              <div class="h-2 bg-blue-400 rounded-full" style="width: 50%"></div>
+            </div>
+
+            <p class="text-xs text-gray-400 mt-4">Pre Result Declared </p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="min-w-full  ">
+          <div id="efg" class="bg-gray-800 text-white p-5 rounded-3xl shadow-lg">
+            <span class="bg-rose-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md">DELAYED</span>
+
+            <div class="mt-4">
+              <p class="text-xl font-semibold">Play Game → Technolgy</p>
+              <p class="text-sm text-gray-300 mt-1">Get 2X of Your Bet Ammount</p>
+            </div>
+
+            <div class="w-full bg-gray-700 h-2 rounded-full mt-5">
+              <div class="h-2 bg-rose-400 rounded-full" style="width: 75%"></div>
+            </div>
+
+            <p class="text-xs text-gray-400 mt-4">Play — Win</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Indicators (Dots) -->
+      <div class="flex justify-center gap-3 mt-2">
+        <div class="dot w-2 h-2 bg-gray-400 rounded-full"></div>
+        <div class="dot w-2 h-2 bg-gray-400 rounded-full"></div>
+        <div class="dot w-2 h-2 bg-gray-400 rounded-full"></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="p-3">
+    <!-- MENU ICONS --> <span id="Category"></span>
+    <div class="mt-2 grid grid-cols-2 gap-5 text-center w-full ">
+
+      <!-- SINGLE -->
+      <div id="alpha" class="flex flex-col items-center cursor-pointer w-full">
+        <div id="alphachild"
+          class="w-full h-12 bg-[#f1f1f1ff] rounded-2xl shadow-md flex items-center justify-center text-gray-700 text-2xl">
+          <i class="fa-solid fa-dollar-sign"></i>
+        </div>
+        <p id="a" class="mt-2 text-gray-800 text-sm font-semibold">Single</p>
+      </div>
+
+      <!-- DOUBLE -->
+      <div id="beeta" class="flex flex-col items-center cursor-pointer w-full">
+        <div id="beetachild"
+          class="w-full h-12 bg-[#f1f1f1ff] rounded-2xl shadow-md flex items-center justify-center text-gray-700 text-2xl">
+          <i class="fa-solid fa-dollar-sign"></i> <i class="fa-solid fa-dollar-sign"></i>
+        </div>
+        <p id="b" class="mt-2 text-gray-800 text-sm font-semibold">Double</p>
+      </div>
+    </div>
+
+
+    <!-- DYNAMIC CONTENT AREA -->
+    <div id="dataTable"><!-- Loader Container -->
+      <!-- PRE LOADER -->
+      <div id="preLoader" class="mt-4 space-y-4">
+        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
+          <div class="flex justify-between items-center">
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-40 mb-2"></div>
+              <div class="h-3 bg-gray-200 rounded w-24"></div>
+            </div>
+            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
+          <div class="flex justify-between items-center">
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-36 mb-2"></div>
+              <div class="h-3 bg-gray-200 rounded w-20"></div>
+            </div>
+            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
+          <div class="flex justify-between items-center">
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-48 mb-2"></div>
+              <div class="h-3 bg-gray-200 rounded w-32"></div>
+            </div>
+            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
+          <div class="flex justify-between items-center">
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-40 mb-2"></div>
+              <div class="h-3 bg-gray-200 rounded w-24"></div>
+            </div>
+            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
+          <div class="flex justify-between items-center">
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-36 mb-2"></div>
+              <div class="h-3 bg-gray-200 rounded w-20"></div>
+            </div>
+            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow animate-pulse">
+          <div class="flex justify-between items-center">
+            <div>
+              <div class="h-4 bg-gray-200 rounded w-48 mb-2"></div>
+              <div class="h-3 bg-gray-200 rounded w-32"></div>
+            </div>
+            <div class="h-7 w-20 bg-gray-200 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- ============================================================ -->
+    <!-- ================= BOTTOM NAVIGATION ========================= -->
+    <!-- ============================================================= -->
+    <div
+      class="fixed hidden bottom-0 left-0 w-full bg-white rounded-t-3xl shadow-[0_-4px_20px_rgba(0,0,0,0.08)] py-4 px-6 flex justify-between items-center text-gray-500 z-40">
+
+      <div class="flex flex-col items-center cursor-pointer w-1/4 text-blue-600">
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center shadow-md mb-1">
+          <i class="fa-solid fa-box text-xl"></i>
+        </div>
+        <span class="text-xs font-semibold">Home</span>
+      </div>
+
+      <div class="flex flex-col items-center cursor-pointer w-1/4">
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center shadow-md mb-1">
+          <i class="fa-solid fa-box text-xl"></i>
+        </div>
+        <span class="text-xs font-semibold">Packers</span>
+      </div>
+
+      <div class="flex flex-col items-center cursor-pointer w-1/4">
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center shadow-md mb-1">
+          <i class="fa-solid fa-box text-xl"></i>
+        </div>
+        <span class="text-xs font-semibold">Search</span>
+      </div>
+
+      <div class="flex flex-col items-center cursor-pointer w-1/4">
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center shadow-md mb-1">
+          <i class="fa-solid fa-box text-xl"></i>
+        </div>
+        <span class="text-xs font-semibold">Settings</span>
+      </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- =================== JAVASCRIPT ============================== -->
+    <!-- ============================================================= -->
+
+
+</body>
+<script src="App.js"></script>
+
+</html>
